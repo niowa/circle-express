@@ -19,14 +19,10 @@ function getAllUsers(req, res, next) {
 }
 
 function createUser(req, res, next) {
-	console.log(req.query.name);
-	console.log(req.query.email);
 	const user = {
 		name: req.query.name,
 		email: req.query.email
 	};
-	console.log(user.name);
-	console.log(user.email);
 	db.one(`INSERT INTO users(id, name, email) VALUES($1, $2, $3) RETURNING id`, [uuid.v4(), user.name, user.email], event => event.id)
 	    .then(data => {
 	        console.log(data);
