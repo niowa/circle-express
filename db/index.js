@@ -1,7 +1,7 @@
 
 var uuid = require('uuid');
 var pgp = require('pg-promise')(/*options*/)
-var db = pgp('postgres://niowa:leska7480311@mypingvinchikinstance.cxghg3astuwi.us-west-2.rds.amazonaws.com:5432/pingvinchik')
+var db = pgp('postgres://niowa:leska7480311@aa1ean2qhfxfrwd.cxghg3astuwi.us-west-2.rds.amazonaws.com:5432/ebdb');
 
 function getAllUsers(req, res, next) {
 	db.any('select * from users')
