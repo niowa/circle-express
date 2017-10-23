@@ -8,7 +8,7 @@ environment-defaults:
     branch: master
     repository: circle-express
 global:
-  application_name: SandboxApplication
+  application_name: circle-express
   default_ec2_keyname: null
   default_platform: arn:aws:elasticbeanstalk:us-west-2::platform/Node.js running on
     64bit Amazon Linux/4.3.0
