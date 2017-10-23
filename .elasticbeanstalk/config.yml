@@ -1,18 +1,18 @@
 branch-defaults:
   default:
-    environment: sandboxapplication-env1
+    environment: circleExpress-env
   master:
-    environment: sandboxapplication-env1
+    environment: circleExpress-env
 environment-defaults:
-  sandboxapplication-env1:
+  circleExpress-env:
     branch: master
-    repository: backend-exp-pg-knex
+    repository: circle-express
 global:
   application_name: SandboxApplication
   default_ec2_keyname: null
-  default_platform: arn:aws:elasticbeanstalk:eu-west-2::platform/Node.js running on
+  default_platform: arn:aws:elasticbeanstalk:us-west-2::platform/Node.js running on
     64bit Amazon Linux/4.3.0
-  default_region: eu-west-2
+  default_region: us-west-2
   include_git_submodules: true
   instance_profile: null
   platform_name: null
