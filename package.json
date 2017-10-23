@@ -5,7 +5,7 @@
   "scripts": {
     "build": "babel lib -d dist",
     "debug": "node debug app.js",
-    "start": "yarn run build && yarn run up && node lib/app.js --exec babel-node",
+    "start": "yarn run build && yarn run up && nodemon lib/app.js --exec babel-node",
     "serve": "node dist/app.js",
     "up": "knex-migrate up",
     "down": "knex-migrate down",
