@@ -1,4 +1,5 @@
 
+var uuid = require('uuid');
 var pgp = require('pg-promise')(/*options*/)
 var db = pgp('postgres://niowa:leska7480311@mypingvinchikinstance.cxghg3astuwi.us-west-2.rds.amazonaws.com:5432/pingvinchik')
 
@@ -17,6 +18,26 @@ function getAllUsers(req, res, next) {
     });
 }
 
+function createUser(req, res, next) {
+	console.log(req.query.name);
+	console.log(req.query.email);
+	const user = {
+		name: req.query.name,
+		email: req.query.email
+	};
+	console.log(user.name);
+	console.log(user.email);
+	db.one(`INSERT INTO users(id, name, email) VALUES($1, $2, $3) RETURNING id`, [uuid.v4(), user.name, user.email], event => event.id)
+	    .then(data => {
+	        console.log(data);
+	        res.send(data) // print new user id;
+	    })
+	    .catch(error => {
+	        console.log('ERROR:', error); // print error;
+	    });
+}
+
 module.exports = {
-	getAllUsers
+	getAllUsers,
+	createUser
 }

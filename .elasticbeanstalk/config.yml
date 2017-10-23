@@ -1,0 +1,22 @@
+branch-defaults:
+  default:
+    environment: sandboxapplication-env1
+  master:
+    environment: sandboxapplication-env1
+environment-defaults:
+  sandboxapplication-env1:
+    branch: master
+    repository: backend-exp-pg-knex
+global:
+  application_name: SandboxApplication
+  default_ec2_keyname: null
+  default_platform: arn:aws:elasticbeanstalk:eu-west-2::platform/Node.js running on
+    64bit Amazon Linux/4.3.0
+  default_region: eu-west-2
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  sc: git
+  workspace_type: Application
