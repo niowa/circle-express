@@ -1,0 +1,9 @@
+dist/
+.idea
+build/Release
+node_modules
+*.seed
+*.log
+*.out
+*.pid
+npm-debug.log
